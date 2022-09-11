@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>Toggle Password Visibility</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity=
+        "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+
+	<style>
+		form i {
+			margin-left: -30px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Sign In</h1>
+		<form>
+			<div>
+				<label>Username:</label>
+				<input type="text" name="userID" id="userID">
+			</div>
+
+			<div>
+				<label>Password:</label>
+				<input type="password" name="password" id="password" />
+				<i class="fa fa-eye" aria-hidden="true" id="togglePassword"></i>
+			</div>
+
+			<button type="submit" id="submit"
+				class="btn btn-primary">
+				Log In
+			</button>
+		</form>
+	</div>
+
+	<script>
+		const togglePassword = document.querySelector('#togglePassword');
+
+		togglePassword.addEventListener('click', (e)=> {
+			// console.log(' hello')
+			const inputField = document.querySelector('#password');
+			const type = inputField.getAttribute('type') === 'password' ? 'text': 'password'
+			inputField.setAttribute('type', type)
+			togglePassword.parentNode
+			console.log(type)
+			togglePassword.parentNode.lastElementChild.classList.toggle('fa-eye-slash')
+		})
+		
+	</script>
+</body>
+
+</html>
